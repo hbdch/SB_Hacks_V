@@ -39,6 +39,8 @@ def send():
     results = personalityComparison.compareData(personalityTraits, companies)
     personalityComparison.saveResults(results)
 
+    #After this, you have to read the .json files to access results :)
+
 def call_api():
     pass
 
