@@ -33,6 +33,6 @@ def saveResults(results):
 
 if __name__ == "__main__":
 	personalityTraits = loadJSONData("data/values.json")
-	companies = loadJSONData("data/companies.json")
+	companies = loadJSONData("data/company_data.json")
 	results = compareData(personalityTraits, companies)
 	saveResults(results)
