@@ -44,13 +44,7 @@ def send():
         results = personalityComparison.compareData(personalityTraits, companies)
         personalityComparison.saveResults(results)
 
-        call = client.calls.create(
-            url='https://425dee8f.ngrok.io/voice',
-            to='+14086379521',
-            from_='+14088726871'
-        )
-
-        return render_template('received.html', fname=f.filename)
+        return render_template('pagetwo.html')
     else:
         return render_template('index.html')
 
@@ -80,11 +74,18 @@ def voice():
 
     return str(resp)
 
+@app.route("/phone", methods=['POST'])
+def make_call():
+    number = request.form['the_phone']
+    number = '+1' + number
+    
+    call = client.calls.create(
+            url='https://c69119fb.ngrok.io/voice',
+            to=number,
+            from_='+14087525919'
+        )
+    return render_template('pagetwo.html')
 
-
-
-def call_api():
-    pass
 
 if __name__ == "__main__":
     app.run()
