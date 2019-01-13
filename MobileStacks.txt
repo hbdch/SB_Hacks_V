@@ -1,0 +1,28 @@
+Apache Cordova Adobe PhoneGap:
+OpenSource, Cross Platform: Android/iOS/Windows/Web OS
+Develop in HTML5 and JS
+Limited hardware and API access, potential Native UI issues
+
+Ionic
+Licence, Cross Platform: Android/iOS/Windows/Chrome
+Develop in JS/Angular
+
+Framework 7: Sits on top of Apache Cordova
+
+React Nativ:
+Cross Platform: Android/iOS
+
+Native Script:
+OpenSource, Cross Platform: Android/iOS
+
+Flutter/Dart (Google, CrossPlatform: Android/iOS)
+Google's new OS and app platform
+Program in Dart
+
+Manifold JS
+
+Xamarin
+Cross Platform: Android/iOS, Windows 10, OSX
+
+Supported by Microsoft
+

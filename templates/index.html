@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link href="{{ url_for('static', filename='main.css') }}" rel="stylesheet" type="text/css" />
+        <script src="site.js"></script>
+    </head>
+    <body>
+        <div class="frame">
+            <div class="center">
+                <div class="bar"></div>
+        		<div class="title">Choose file to upload</div>
+        		<div class="dropzone">
+                    <div class="content">
+                        <img src="http://100dayscss.com/codepen/upload.svg" class="upload">
+                        <span class="filename"></span>
+                        <form id="uploadbanner" method=POST enctype=multipart/form-data action="/send" name="file">
+                            <input id="fileupload" name="myfile" type="file" />
+                            <div class="upload-bttn">
+                                <input type="submit" value="Upload">
+                            </div>
+                        </form>
+                        <img src="http://100dayscss.com/codepen/syncing.svg" class="syncing">
+                		<img src="http://100dayscss.com/codepen/checkmark.svg" class="done">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
