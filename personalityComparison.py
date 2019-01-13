@@ -16,8 +16,6 @@ def compareData(traits, companies):
 			score += (companies[company][trait] - traits[trait])**2
 		companyScores[company] = score
 	sortedScores = sorted(companyScores.items(), key = operator.itemgetter(1))
-	print(sortedScores)
-	print(sortedScores[0][0] + " is the best company that fits your personality!")
 	return sortedScores
 
 def writeToJSONFile(fileName, data):
@@ -33,11 +31,8 @@ def saveResults(results):
 		topFive.append(results[i][0])
 	writeToJSONFile("results", topFive)
 
-def main():
+if __name__ == "__main__":
 	personalityTraits = loadJSONData("data/values.json")
 	companies = loadJSONData("data/companies.json")
 	results = compareData(personalityTraits, companies)
 	saveResults(results)
-
-if __name__ == "__main__":
-	main()

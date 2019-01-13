@@ -6,6 +6,8 @@ Created on Fri Jan 11 23:57:42 2019
 """
 from flask import Flask, request, render_template
 from werkzeug import secure_filename
+import personalityEntractor
+import personalityComparison
 
 app = Flask(__name__)
 DEBUG = False
@@ -26,7 +28,16 @@ def send():
         return render_template('received.html', fname=f.filename)
     else:
         return render_template('index.html')
-        
+
+    # The dictionary of traits is called values.json within the data folder
+    # The list of the top 5 companies is called results.json within the data folder
+    text = personalityExtractor.loadText(f.filename)
+    profile = personalityExtractor.getPersonalityTraits(text)
+    personalityTraits = personalityExtractor.findTraits(profile["personality"])
+
+    companies = personalityComparison.loadJSONData("data/company_data.json")
+    results = personalityComparison.compareData(personalityTraits, companies)
+    personalityComparison.saveResults(results)
 
 def call_api():
     pass
