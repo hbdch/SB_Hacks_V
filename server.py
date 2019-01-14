@@ -14,8 +14,8 @@ from twilio.rest import Client
 
 app = Flask(__name__)
 DEBUG = False
-account_sid = 'AC3ecf320b40fe23a4533081cb84b3ff7c'
-auth_token = '4f71269109e91612e818429ad3bfe222'
+account_sid = 'fill this in'
+auth_token = 'fill this in'
 client = Client(account_sid, auth_token)
 
 
