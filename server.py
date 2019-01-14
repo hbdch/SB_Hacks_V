@@ -14,8 +14,11 @@ from twilio.rest import Client
 
 app = Flask(__name__)
 DEBUG = False
-account_sid = 'fill this in'
-auth_token = 'fill this in'
+with open('config.json', 'r') as config_file:
+    config_dict = json.load(config_file)
+    account_sid = config_file["account_sid"]
+    auth_token = config_file["auth_token"]
+
 client = Client(account_sid, auth_token)
 
 
